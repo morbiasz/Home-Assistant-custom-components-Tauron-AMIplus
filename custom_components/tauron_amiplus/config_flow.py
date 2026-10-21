@@ -16,6 +16,7 @@ from .const import (
     CONF_SHOW_12_MONTHS,
     CONF_SHOW_BALANCED,
     CONF_SHOW_BALANCED_YEAR,
+    CONF_PROSUMENT_RATIO,
     CONF_SHOW_CONFIGURABLE,
     CONF_SHOW_CONFIGURABLE_DATE,
     CONF_SHOW_GENERATION,
@@ -23,6 +24,7 @@ from .const import (
     CONF_SHOW_REACTIVE,
     CONF_STORE_STATISTICS,
     CONF_TARIFF,
+    DEFAULT_PROSUMENT_RATIO,
     DOMAIN,
 )
 
@@ -177,6 +179,9 @@ class TauronAmiplusFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                     ),
                     CONF_SHOW_REACTIVE: user_input.get(CONF_SHOW_REACTIVE, False),
                     CONF_SHOW_NET_BILLING: user_input.get(CONF_SHOW_NET_BILLING, False),
+                    CONF_PROSUMENT_RATIO: user_input.get(
+                        CONF_PROSUMENT_RATIO, DEFAULT_PROSUMENT_RATIO
+                    ),
                     CONF_STORE_STATISTICS: user_input.get(CONF_STORE_STATISTICS, True),
                 }
 
@@ -275,6 +280,10 @@ class TauronAmiplusFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
                     CONF_SHOW_CONFIGURABLE_DATE,
                     default=user_input.get(CONF_SHOW_CONFIGURABLE_DATE, vol.UNDEFINED),
                 ): selector({"date": {}}),
+                vol.Optional(
+                    CONF_PROSUMENT_RATIO,
+                    default=user_input.get(CONF_PROSUMENT_RATIO, DEFAULT_PROSUMENT_RATIO),
+                ): vol.All(vol.Coerce(float), vol.Range(min=0.0, max=1.0)),
                 vol.Required(
                     CONF_SHOW_REACTIVE,
                     default=user_input.get(CONF_SHOW_REACTIVE, vol.UNDEFINED),
@@ -365,6 +374,10 @@ class TauronAmiplusOptionsFlowHandler(config_entries.OptionsFlow):
                             CONF_SHOW_CONFIGURABLE_DATE, vol.UNDEFINED
                         ),
                     ): selector({"date": {}}),
+                    vol.Optional(
+                        CONF_PROSUMENT_RATIO,
+                        default=self.get_option(CONF_PROSUMENT_RATIO, DEFAULT_PROSUMENT_RATIO),
+                    ): vol.All(vol.Coerce(float), vol.Range(min=0.0, max=1.0)),
                     vol.Required(
                         CONF_SHOW_REACTIVE,
                         default=self.get_option(CONF_SHOW_REACTIVE, False),

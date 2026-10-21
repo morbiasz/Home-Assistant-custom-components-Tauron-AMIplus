@@ -32,6 +32,7 @@
           "show_configurable_sensors_date": "Początek okresu dla konfigurowalnych podsumowań",
           "show_reactive_sensors": "Pobieranie danych o mocy biernej (indukcyjnej/pojemnościowej)",
           "show_net_billing_sensors": "Pobieranie danych o energii po zbilansowaniu (netto) wyliczonych przez TAURON",
+          "prosument_ratio": "Współczynnik prosumenta stosowany do energii oddanej w atrybucie \"balance_bank\" sensorów bilansu (0.8 dla net-meteringu do 10 kWp, 0.7 dla większych instalacji, 1.0 dla net-billingu / brak depozytu)",
           "store_statistics": "Zapisywanie godzinowe statystyki (dla panelu Energia)"
         }
       },
@@ -59,6 +60,7 @@
           "show_configurable_sensors_date": "Początek okresu dla konfigurowalnych podsumowań",
           "show_reactive_sensors": "Pobieranie danych o mocy biernej (indukcyjnej/pojemnościowej)",
           "show_net_billing_sensors": "Pobieranie danych o energii po zbilansowaniu (netto) wyliczonych przez TAURON",
+          "prosument_ratio": "Współczynnik prosumenta stosowany do energii oddanej w atrybucie \"balance_bank\" sensorów bilansu (0.8 dla net-meteringu do 10 kWp, 0.7 dla większych instalacji, 1.0 dla net-billingu / brak depozytu)",
           "store_statistics": "Zapisywanie godzinowe statystyki (dla panelu Energia)"
         }
       }

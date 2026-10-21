@@ -32,6 +32,7 @@
           "show_configurable_sensors_date": "Start date for configurable data period",
           "show_reactive_sensors": "Enable downloading reactive power data (inductive/capacitive)",
           "show_net_billing_sensors": "Enable downloading net-billed energy data (calculated by TAURON)",
+          "prosument_ratio": "Prosument ratio applied to generation in balance sensors' \"balance_bank\" attribute (0.8 for net-metering <=10 kWp, 0.7 for larger installations, 1.0 for net-billing / no deposit)",
           "store_statistics": "Store hourly statistics (for Energy dashboard)"
         }
       },
@@ -60,6 +61,7 @@
           "show_configurable_sensors_date": "Start date for configurable data period",
           "show_reactive_sensors": "Enable downloading reactive power data (inductive/capacitive)",
           "show_net_billing_sensors": "Enable downloading net-billed energy data (calculated by TAURON)",
+          "prosument_ratio": "Prosument ratio applied to generation in balance sensors' \"balance_bank\" attribute (0.8 for net-metering <=10 kWp, 0.7 for larger installations, 1.0 for net-billing / no deposit)",
           "store_statistics": "Store hourly statistics (for Energy dashboard)"
         }
       }
